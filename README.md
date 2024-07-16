@@ -20,4 +20,23 @@ Implemented text analysis using machine learning models to classify movie review
 9. Used the most accurate model (Logistic Regression) to train on the entire dataset. df
 10. Took custom review inputs and predicted Positive/Negative review.
 
-Dataset Source (from Kaggle): https://inclass.kaggle.com/c/si650winter11/data
+
+![Screenshot (116)](https://github.com/user-attachments/assets/59040fa9-4b66-4bd4-8839-3b065576a925)
+
+
+![Screenshot (117)](https://github.com/user-attachments/assets/a6c947d8-de1c-43ce-bda3-6238157273eb)
+
+
+![Screenshot (118)](https://github.com/user-attachments/assets/779921d0-c127-4163-93bc-0f043de7ca3f)
+
+
+![Screenshot (119)](https://github.com/user-attachments/assets/d01f2ba4-ba16-4d11-8434-c1013e4e6ea3)
+
+
+![Screenshot (120)](https://github.com/user-attachments/assets/79f472c5-7168-4765-ac9b-8cc406e1ca8c)
+
+
+![Screenshot (121)](https://github.com/user-attachments/assets/1ec7cb9a-f1ac-49af-8a1e-41d2c9ae533e)
+
+
+
