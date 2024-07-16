@@ -1,3 +1,13 @@
+**Name:** DURGA P
+
+**Company:** CODTECH IT SOLUTIONS
+
+**ID:** CT4ML3665
+
+**Domain:** Machine Learning
+
+**Duration:** July 1,2024 to August 1,2024.
+
 # Movie Reviews Sentiment Analysis using machine learning
 Implemented text analysis using machine learning models to classify movie review sentiments as positive or negative. Built using Python 3.6.1.
 
