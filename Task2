@@ -11,10 +11,8 @@ path = 'opinions.tsv'
 data = pd.read_table(path,header=None,skiprows=1,names=['Sentiment','Review'])
 X = data.Review
 y = data.Sentiment
-#Using CountVectorizer to convert text into tokens/features
 vect = CountVectorizer(stop_words='english', ngram_range = (1,1), max_df = .80, min_df = 4)
 X_train, X_test, y_train, y_test = train_test_split(X,y,random_state=1, test_size= 0.2)
-#Using training data to transform text into counts of features for each message
 vect.fit(X_train)
 X_train_dtm = vect.transform(X_train) 
 X_test_dtm = vect.transform(X_test)
@@ -51,33 +49,24 @@ import pandas as pd
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import MultinomialNB
 
-# Assuming vect is your CountVectorizer object and NB is your MultinomialNB model
-
-# Get feature names
 tokens_words = vect.get_feature_names_out()
 print('\nAnalysis')
 print('No. of tokens: ', len(tokens_words))
 
-# Get the feature counts for each class
 counts = NB.feature_count_
 df_table = {'Token': tokens_words, 'Negative': counts[0, :], 'Positive': counts[1, :]}
 tokens = pd.DataFrame(df_table, columns=['Token', 'Positive', 'Negative'])
 
-# Count positive and negative tokens
 positives = len(tokens[tokens['Positive'] > tokens['Negative']])
 print('No. of positive tokens: ', positives)
 print('No. of negative tokens: ', len(tokens_words) - positives)
 
-# Check positivity/negativity of specific tokens
 token_search = ['awesome']
 print('\nSearch Results for token/s:', token_search)
 print(tokens.loc[tokens['Token'].isin(token_search)])
 
-# Assuming X_test, y_test, and y_pred are defined
-# Analyse False Negatives (Actual: 1; Predicted: 0) (Predicted negative review for a positive review)
 print(X_test[y_pred < y_test])
 
-# Analyse False Positives (Actual: 0; Predicted: 1) (Predicted positive review for a negative review)
 print(X_test[y_pred > y_test])
 
 trainingVector = CountVectorizer(stop_words='english', ngram_range = (1,1), max_df = .80, min_df = 5)
@@ -85,7 +74,7 @@ trainingVector.fit(X)
 X_dtm = trainingVector.transform(X)
 LR_complete = LogisticRegression()
 LR_complete.fit(X_dtm, y)
-#Input Review
+
 print('\nTest a custom review message')
 print('Enter review to be analysed: ', end=" ")
 test = []
@@ -93,5 +82,5 @@ test.append(input())
 test_dtm = trainingVector.transform(test)
 predLabel = LR_complete.predict(test_dtm)
 tags = ['Negative','Positive']
-#Display Output
+
 print('The review is predicted',tags[predLabel[0]])
